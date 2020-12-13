@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>8_CSS3动画</title>
+
+<style type="text/css">
+    .love{
+        width: 280px;
+        height: 240px;
+        margin: auto;
+        position: relative;
+    }
+
+    .left, .right {
+        position: absolute;
+        top: 180px;
+        width: 140px;
+        height: 240px;
+        border-radius: 150px 150px 0 0;
+        background-color: rgb(255,0,0);
+        animation-duration: 2s;
+        animation-delay: 0.05s;        
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        box-shadow: 6px 0px gray;
+    }
+    .left{
+        animation-name: love-left;
+        left: 100px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+    .right {
+        right: 180px;
+        transform: rotate(45deg);
+        animation-name: love-right;
+        transform-origin: 100% 100%;
+    }
+
+    @keyframes love-left {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+      50% {
+        transform: scale(1.3) rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+    }
+
+    @keyframes love-right{
+      0%, 100% {
+        transform: scale(1) rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+      50% {
+        transform: scale(1.3) rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+    }
+
+    p{
+    	position: absolute;
+    	left: 55px;
+    	top: 235px;
+    	font-size: 30px;
+    }
+
+</style>
+</head>
+<body>
+
+   <div class="love">
+    <div class="left"></div>
+    <div class="right"></div>
+    <p>某某某</p>
+   </div>
+
+</body>
+</html>

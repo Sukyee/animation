@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>正方体翻转</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		html{
+			height: 100%;
+			opacity: 0.8;
+		}
+
+		.content {
+			margin-top: 200px;
+			perspective: 1000px;
+		}
+
+		.box {
+			height: 200px;
+			width: 200px;
+			position: relative;
+			margin: auto;
+			transform-style: preserve-3d;
+			animation: rotate 6s infinite;
+		}
+
+		@keyframes rotate {
+			from {
+				transform: rotateY(0deg) rotateX(0deg);
+			}
+
+			to {
+				transform: rotateY(360deg) rotateX(360deg);
+			}
+		}
+
+		.box>div {
+			height: 100%;
+			width: 100%;
+			opacity: 0.9;
+			position: absolute;
+			text-align: center;
+			color: #fff;
+			line-height: 200px;
+			font-size: 30px;
+			border: 1px solid #fff;
+		}
+
+		.up {
+			transform: rotateX(90deg) translateZ(100px);
+			background: rgba(178, 211, 245,0.5);
+		}
+
+		.down {
+			transform: rotateX(90deg) translateZ(-100px);
+			background: rgba(212, 172, 246,0.5);
+		}
+
+		.forward {
+			transform: translateZ(100px);
+			background: rgba(246,172,201,0.5);
+		}
+
+		.backward {
+			transform: translateZ(-100px);
+			background: rgba(181, 240, 166,0.5);
+		}
+
+		.left {
+			transform: rotateY(90deg) translateZ(-100px);
+			background: rgba(234, 136, 83,0.5);
+		}
+
+		.right {
+			transform: rotateY(90deg) translateZ(100px);
+			background: rgba(224, 215,63,0.5);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<div class="box">
+
+			<div class="up">上</div>
+			<div class="down">下</div>
+			<div class="left">左</div>
+			<div class="right">右</div>
+			<div class="forward">前</div>
+			<div class="backward">后</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+	
+    .papercutting{
+    	font-size: 100px;
+    }
+    .papercutting span{
+    	position: relative;
+    	top: 200px;
+    	left: 350px;
+    }
+    .papercutting span::before,.papercutting span::after{
+    	content: attr(data-text);
+    	position: absolute;
+    	left: 0px;
+    	top: 0px;
+    }
+    .papercutting span::before{
+    	color: white;
+    	transform-origin: left;
+    	text-shadow: black 2px 0.5px 0;
+    	display: inline-block;
+    	transition: all 1s;
+    }
+    .papercutting:hover span::before{
+    	transform: rotateZ(2deg) rotateY(34deg);
+    }
+    .papercutting span{
+    	color: black;
+    	z-index: 9;
+    	transition: all 1s;
+    }
+    .papercutting span::after{
+    	color: gray;
+    	display: inline-block;
+    	z-index: -99;
+    }
+    .papercutting:hover span::after{
+    	transform-origin: left;
+    	transform: skewY(22deg);
+    	transition: all 0.5s linear;
+    }
+
+</style>
+
+</head>
+<body>
+
+   <div class="papercutting">
+   	<span data-text="前">前</span>
+   	<span data-text="端">端</span>
+   	<span data-text="攻">攻</span>
+   	<span data-text="略">略</span>
+   </div>
+
+</body>
+</html>
